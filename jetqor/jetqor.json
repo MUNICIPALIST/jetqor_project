@@ -1,0 +1,1298 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "jetqor",
+    "description": "This document was generated from the branch main#86968696aa1f275bebb6dae899cdfff37417221a@142288@0.\n\nIf you are a contributor to this project, you may access it here: https://paw.cloud/account/teams/11180346/projects/414297",
+    "version": "v0.0.0",
+    "contact": {
+      "name": "NikitaVelixJob",
+      "url": "https://paw.cloud/account/teams/11180346"
+    }
+  },
+  "host": "85.198.91.71",
+  "schemes": [
+    "http"
+  ],
+  "basePath": "/",
+  "paths": {
+    "/order/delete": {
+      "post": {
+        "summary": "Delete order",
+        "description": "return Deleted <Order>\n\nruls: Administrator",
+        "operationId": "9237610f-0025-4241-9cdc-698d76750335",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"1\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/order": {
+      "get": {
+        "summary": "Orders",
+        "description": "return Array<Order>\n\nruls: Administrator",
+        "operationId": "4c2bf637-4e42-487e-9398-a7586eee30e2",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/order/my": {
+      "get": {
+        "summary": "My Orders",
+        "description": "return Array<Order>\n\nruls: Administrator, Manager, Client",
+        "operationId": "5b62dd54-f7ec-443c-8e88-37e12ddf82b7",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/invoice/approve": {
+      "post": {
+        "summary": "Invoice approve",
+        "description": "body ->\n\nid: Number, String // id of invoice to approve\n\nreturn { UpdatedInvoice, Updatedproducts }\n\nruls: Administrator, Manager",
+        "operationId": "d3cc71c4-571f-4bb0-ae73-e93ac9773a0e",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"1\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/invoice/decline": {
+      "post": {
+        "summary": "Invoice decline",
+        "description": "body -> \n\nid: Number, Required // id of invoice to decline\ndecline_message: String, Required // cause of decline\n\nreturn updated <Invoice>\n\nruls: Administrator, Manager",
+        "operationId": "f1f4f37a-d05a-4ea1-801f-f558926ff1b1",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"1\",\"decline_message\":\"Test\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/invoice/indelivery/": {
+      "post": {
+        "summary": "Indelivery set status",
+        "description": "body -> \n\nid: Number, Required // id of invoice to set status \"indelivery\"\n\nreturn updated <Invoice>",
+        "operationId": "8d6b425b-8baa-49cf-9734-98c6863e87f2",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"1\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/invoice/delete": {
+      "post": {
+        "summary": "Delete invoice",
+        "description": "body -> \n\nid: Number, Required // id of invoice to delete\n\nreturn deleted <Invoice>\n\nruls: Administrator",
+        "operationId": "4f865c96-1145-466b-a849-b31afcfe2f8f",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"5\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/invoice/create": {
+      "post": {
+        "summary": "Create Invoice",
+        "description": "body ->\n\naddress_from: String, Required\naddress_to: String, Required\nstatus: String, Optional, @default(created)\nproducts: Array<InvoiceProduct>\nstorageId: Number, Required\n\nInvoiceProduct body ->\n\ncount: Number, Min(1), Required\nproductId: Number, Required\n\n\nruls: Administrator, Client",
+        "operationId": "f4fbed99-1fd3-486d-9b29-bd37093c10a9",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"storageId\":\"1\",\"products\":[{\"count\":\"3\",\"productId\":\"1\"},{\"count\":\"13\",\"productId\":\"2\"},{\"count\":\"5\",\"productId\":\"3\"}]}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/invoice/id/1": {
+      "get": {
+        "summary": "Invoice by id",
+        "description": "return <Invoice>\n\nruls: Administrator, Manager, Client",
+        "operationId": "5d23c91d-c411-4752-acdc-5cf5106dc286",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/invoice": {
+      "get": {
+        "summary": "Invoices",
+        "description": "return Array<Invoice>\n\nruls: Administrator",
+        "operationId": "6c055078-4749-4cc2-a7ee-092aa99b48d9",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/product/article/106579948": {
+      "get": {
+        "summary": "Get Product by article",
+        "description": "return <Product>\n\nruls: Administrator, Manager, Client",
+        "operationId": "4a26e3ad-825b-4c45-8e3a-2867be3b446b",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/product/my": {
+      "get": {
+        "summary": "My Products",
+        "description": "return Array<Product>\n\nruls: Administrator, manager, client",
+        "operationId": "d8c5c3cf-fa97-409e-b330-3b08bdd9ff0f",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "type": "string",
+            "default": "10",
+            "name": "limit",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/product/update": {
+      "post": {
+        "summary": "Update Product",
+        "description": "update one product by id\n\nreturn <UpdatedProduct>\n\nruls: administrator, client",
+        "operationId": "c4bf1ae5-4c2a-4d90-99d3-991ba5b4456a",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"name\":\"TestUpdated\",\"article\":\"321\",\"photo_url\":\"photo_url\",\"description\":\"DescriptionDescription\",\"id\":\"2\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/product/delete": {
+      "post": {
+        "summary": "Delete Product",
+        "description": "delete one product by id\n\nruls: administrator, client",
+        "operationId": "6bb88b2f-7711-45b1-bdd5-4902eed565b3",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"1\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/product/": {
+      "get": {
+        "summary": "Products",
+        "description": "Request all available products - return Array<Product>\n\nruls: Administrator",
+        "operationId": "4f231450-09f0-46a2-a3f4-5a0ac0d3d283",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/product/id/1": {
+      "get": {
+        "summary": "Product by id",
+        "description": "get unique product by id (incremental)\n\nreutrn <Product>\n\nruls: Administrator",
+        "operationId": "56a15fb6-1f06-44d4-aec2-790daf74099b",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/product/create": {
+      "post": {
+        "summary": "Create Product",
+        "description": "body schema for create product:\n\nname: String, required\narticle: String, required\nphoto_url: String, required\ndescription: String, optional\n\nreturn <Product>\n\nruls: client, administrator",
+        "operationId": "627db5bf-58d7-4bc1-bb80-d2682032be6a",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"name\":\"Test 3\",\"article\":\"106579948\",\"photo_url\":\"https://aticles.com\",\"description\":\"TestDescription 3\",\"price\":\"5000\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/storage/set_cell": {
+      "post": {
+        "summary": "Set cell",
+        "description": "body ->\n\ncell_id: Number, Required\ninvoice_product_id: Number, Required\n\nreturn updated <Product>\n\nruls: Administrator, Manager",
+        "operationId": "053edcae-02ec-42f2-82fc-5ef0eb6cca4a",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"cell_id\":\"1\",\"invoice_product_id\":\"3\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/storage/to_set_cell/1": {
+      "post": {
+        "summary": "To set cell",
+        "description": "return to set cell <products>\n\nruls: Administrator, Manager",
+        "operationId": "07e09199-4cc5-482c-a85e-c62e3c00ba48",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\n\t\"query\": \"query{}\",\n\t\"variables\": {}\n}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/storage/delete": {
+      "post": {
+        "summary": "Delete Storage",
+        "description": "body ->\n\nid: Number, Required // id of storage to delete\n\nreturn deleted <Storage>\n\nruls: Administrator",
+        "operationId": "46b2a9be-efc4-4831-be3c-56902eebf32e",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"1\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/storage/update": {
+      "post": {
+        "summary": "Update Storage",
+        "description": "body ->\n\nid: Number, Required // id of storage to update\nname: String, Optional\naddress: String, Optional\ncity: String, Optional\n\nreturn updated <Storage>\n\nruls: Administrator",
+        "operationId": "2d52f6a0-2b88-4ad7-89d9-69a151296b71",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"1\",\"name\":\"Updated Storage\",\"address\":\"updated\",\"city\":\"ALMATY\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/storage/create": {
+      "post": {
+        "summary": "Create Storage",
+        "description": "body ->\n\nname: String, Required\naddress: String, Required\ncity: String, Required\n\nreturn new <Storage>\n\nruls: Administrator",
+        "operationId": "1ec82a98-687a-4a65-aeef-8c6d5b332e40",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"name\":\"TestStorage\",\"city\":\"Almaty\",\"address\":\"Abaya 131/1\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/storage/id/1": {
+      "get": {
+        "summary": "Storage by id",
+        "description": "return <Storage>\n\nruls: Administrator",
+        "operationId": "7ac9ce23-b1d0-48b5-b619-21b514c6afd5",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/storage/": {
+      "get": {
+        "summary": "Storages",
+        "description": "return Array<Storage>\n\nruls: Administrator",
+        "operationId": "4665bf31-e652-49d2-abf7-3123779f386a",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/entity/my": {
+      "get": {
+        "summary": "My Entities",
+        "description": "return Array<Entity>\n\nruls: Administrator, Manager, Client",
+        "operationId": "2bf2f7bd-9ad3-493a-a367-14744ba4c97d",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "type": "string",
+            "default": "10",
+            "name": "limit",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/entity/id/2": {
+      "get": {
+        "summary": "Entity by id",
+        "description": "return <Entity>\n\nruls: Administrator, Manager",
+        "operationId": "59f5fd8c-aec0-465e-81b8-003a352639b3",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/entity/": {
+      "get": {
+        "summary": "Entities",
+        "description": "return Array<Entity>\n\nruls: Administrator",
+        "operationId": "2a4c862d-9ada-4802-b252-88d7aeaa4df8",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/cell/delete": {
+      "post": {
+        "summary": "Delete Cell",
+        "description": "body ->\n\nid: Number, Required // id of cell to delete\n\nreturn deleted <Cell>\n\nruls: Administrator",
+        "operationId": "07f0c06e-64d8-4adc-86c6-e8e8d0eba2b3",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":\"1\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/cell/update": {
+      "post": {
+        "summary": "Update Cell",
+        "description": "body ->\n\nid: Number, Required // id of cell to update\nname: String, Optional\narticle: String, Optional\n\nreturn updated <Cell>\n\nruls: Administrator",
+        "operationId": "b2f65f15-f91b-449f-88c3-014ebcc92b6a",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"id\":1,\"name\":\"Updated Cell\",\"article\":\"Updated\",\"rack\":1,\"row\":1}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/cell/create": {
+      "post": {
+        "summary": "Create Cell",
+        "description": "body ->\n\nname: String, Optional\narticle: String, Required\nstorageId: Number, Required\n\nreturn new <Cell>\n\nruls: Administrator",
+        "operationId": "755404c2-719a-40fb-b7bf-3e03f0a26615",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"name\":\"TestCell3\",\"article\":\"R1C151\",\"storageId\":1,\"rack\":2,\"row\":1}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/cell/id/1": {
+      "get": {
+        "summary": "Cell by id",
+        "description": "return <Cell>\n\nruls: Administrator",
+        "operationId": "195624a5-4355-43cd-8e95-6b2a454130df",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/cell/": {
+      "get": {
+        "summary": "Cells",
+        "description": "return Array<Cell>\n\nruls: Administrator",
+        "operationId": "93ea77c4-a219-47ad-aa28-2a36ead3e3bf",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "login",
+        "description": "login to system by get the JWToken\nreturn { token: JWT }\n\nrules: ALL",
+        "operationId": "8f828e6e-175c-484a-a476-7e548bcf15f0",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"email\":\"giranda2222@gmail.com\",\"password\":\"Aa123456\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/user/me": {
+      "get": {
+        "summary": "Me",
+        "description": "Request self user data\nreturn <User>\n\nruls: self, Administrator",
+        "operationId": "283d32d2-1bd6-46ed-af4f-5bad17429bcd",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/user/create": {
+      "post": {
+        "summary": "Create User",
+        "description": "body schema for create user:\n\nname: String, optional\nphone: String, optional\nemail: String, required\nrole: [administrator, manager, client], optional, default: client\npassword: String, required\n\nreturn <User>\n\nruls: Administrator\n",
+        "operationId": "9967c934-8eb2-4d96-a163-4a290db33c7c",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "{\"email\":\"jetqor_kaspi@gmail.com\",\"password\":\" \",\"role\":\"administrator\",\"name\":\"Dimash\",\"phone\":\"87000000000\"}"
+            },
+            "in": "body",
+            "name": "body"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/user/id/1": {
+      "get": {
+        "summary": "User by id",
+        "description": "get unique user by id (incremental)\n\nreutrn <User>\n\nruls: Administrator",
+        "operationId": "132c2a85-c8d5-4f6f-b653-372a80ff982c",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/user/": {
+      "get": {
+        "summary": "Users",
+        "description": "Request all available users - return Array<user>\n\nruls: Administrator",
+        "operationId": "5ec912eb-1494-4f34-9c0c-537a49f7a6e8",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwNzQ3MTk2LCJleHAiOjE3NDA3NTA3OTZ9.lDT4T4VQtNUWA-zxSyNG1Z2ra67lvvhz0KyRY32dps4",
+            "name": "authorization",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        },
+        "security": [
+          {
+            "oauth_2_auth": []
+          }
+        ]
+      }
+    },
+    "/v2/orders": {
+      "get": {
+        "summary": "Request",
+        "description": "",
+        "operationId": "a8d10161-b616-44e4-a51f-313eac512d1a",
+        "consumes": [
+          "application/vnd.api+json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "default": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwMjE0MTE3LCJleHAiOjE3NDAyMTc3MTd9.RDCBxlOR1hPOnNfSbMMybo4no6g_GlAFYAfdYNRVt0o",
+            "name": "X-Auth-Token",
+            "required": false,
+            "in": "header"
+          },
+          {
+            "type": "string",
+            "default": "0",
+            "name": "page[number]",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "100",
+            "name": "page[size]",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "1739719580000",
+            "name": "filter[orders][creationDate][$ge]",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "1739749580000",
+            "name": "filter[orders][creationDate][$le]",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "type": "string",
+            "default": "ARCHIVE",
+            "name": "filter[orders][state]",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    },
+    "/products/classification/categories": {
+      "get": {
+        "summary": "Request",
+        "description": "",
+        "operationId": "52a2cebb-c386-42a6-84f8-acc8c9ec5e1b",
+        "parameters": [
+          {
+            "type": "string",
+            "default": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQwMjE0MTE3LCJleHAiOjE3NDAyMTc3MTd9.RDCBxlOR1hPOnNfSbMMybo4no6g_GlAFYAfdYNRVt0o",
+            "name": "X-Auth-Token",
+            "required": false,
+            "in": "header"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "no response description was provided for this operation"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "oauth_2_auth": {
+      "type": "oauth2",
+      "scopes": {}
+    }
+  },
+  "tags": []
+}

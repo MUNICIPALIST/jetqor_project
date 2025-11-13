@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "jetqor_kaspi",
+      "cwd": "./",
+      "script": "yarn start",
+    }
+  ]
+}
